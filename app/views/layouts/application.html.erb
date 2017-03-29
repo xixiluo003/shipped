@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shipped</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <p class="notice"><%= notice %></p>
+
+  <!-- ======= ======= ======= body ======= ======= ======= -->
+  <body>
+
+      <!-- == header == -->
+      <div id="header" class="section">
+          <p>header</p>
+          <%= render :partial => "/jobs/menu"%>
+      </div>
+
+      <!-- == yield == -->
+      <div id="yield" class="section">
+          <%= yield %>
+      </div>
+
+      <!-- == footer == -->
+      <div id="footer" class="section">
+          <p>footer</p>
+      </div>
+
+  </body>
+</html>

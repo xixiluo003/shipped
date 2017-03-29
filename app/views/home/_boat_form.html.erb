@@ -1,0 +1,8 @@
+<h1>Register a boat<h1>
+
+<%= form_for @boat do |f| %>
+  <%= f.label :name %><%= f.text_field :name %><br/>
+  <%= f.label :capacity %><%= f.text_field :capacity %><br/>
+  <%= f.label :location %><%= f.text_field :location %><br/>
+  <%= f.submit %>
+<% end %>

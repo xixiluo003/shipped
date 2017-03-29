@@ -1,0 +1,9 @@
+<%= form_for @job do |f| %>
+  <%= f.label :description %><%= f.text_field :description %><br/>
+  <%= f.label :cost %><%= f.text_field :cost %><br/>
+  <%= f.label :origin %><%= select("job", "origin", Port.all.map { |r| [ r.name, r.id ] }, { :include_blank => true }) %><br/>
+  <%= f.label :destination %><%= select("job", "destination", Port.all.map { |r| [ r.name, r.id ] }, { :include_blank => true }) %><br/>
+  <%= f.label :containers %><%= f.text_field :ccontainers %><br/>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.submit %>
+<% end %>

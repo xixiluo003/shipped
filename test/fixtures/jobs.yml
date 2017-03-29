@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  cost: 9.99
+  origin_id: one
+  destination_id: one
+
+two:
+  user: two
+  cost: 9.99
+  origin_id: two
+  destination_id: two
