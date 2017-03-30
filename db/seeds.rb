@@ -11,9 +11,9 @@ Port.create([
 
 Boat.destroy_all
 Boat.create([
-  { name:"Num1", capacity:10, location:"New York" },
-  { name:"Num2", capacity:20, location:"New York" },
-  { name:"Num3", capacity:50, location:"Sydney" },
-  { name:"Num4", capacity:20, location:"Sao Paulo" },
-  { name:"Num5", capacity:100, location:"Hong Kong" },
+  { name:"Num1", capacity:10, location:"New York", user_id:1 },
+  { name:"Num2", capacity:20, location:"New York", user_id:1 },
+  { name:"Num3", capacity:50, location:"Sydney", user_id:2 },
+  { name:"Num4", capacity:20, location:"Sao Paulo", user_id:1 },
+  { name:"Num5", capacity:100, location:"Hong Kong", user_id:2 },
 ])

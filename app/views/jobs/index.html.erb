@@ -9,26 +9,23 @@
 
 <%= render 'form', job: @job %>
 
-<% @jobs.each do |job| %>
-  <% origin_name = Port.where(id: job[:origin].to_i).select("name").first %>
-  <% destination_name = Port.where(id: job[:destination].to_i).select("name").first %>
+<h4>Jobs</h4>
+<% if @jobs %>
+  <% @jobs.each do |job| %>
+    <% origin_name = Port.where(id: job[:origin].to_i).select("name").first %>
+    <% destination_name = Port.where(id: job[:destination].to_i).select("name").first %>
+    <% puts "\n ********** job: #{job.inspect}" %>
 
-  <p>Job Description: <%= job.description %> </p>
-  <p>Job Cost: <%= job.cost %></p>
-  <p>Origin Location: <%= origin_name[:name] %></p>
-  <p>Destination Location: <%= destination_name[:name] %></p>
-  <p>Containers Needed: <%= job.ccontainers %></p>
+    <p>
+      Job Description: <%= job.description %><br>
+      Job Cost: <%= job.cost %><br>
+      Origin Location: <%= origin_name[:name] %><br>
+      Destination Location: <%= destination_name[:name] %><br>
+      Containers Needed: <%= job.ccontainers %><br>
+      Boat: <%= Boat.find(job.boat_id).name %><br>
+    </p>
+
+    <td><%= link_to 'Edit', edit_job_path(job) %></td>
+    <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td><br>
+  <% end %>
 <% end %>
-
-
-  <tbody>
-    <% @jobs.each do |job| %>
-      <tr>
-        <td><%= link_to 'Edit', edit_job_path(job) %></td>
-        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>

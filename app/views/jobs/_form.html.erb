@@ -4,6 +4,7 @@
   <%= f.label :origin %><%= select("job", "origin", Port.all.map { |r| [ r.name, r.id ] }, { :include_blank => true }) %><br/>
   <%= f.label :destination %><%= select("job", "destination", Port.all.map { |r| [ r.name, r.id ] }, { :include_blank => true }) %><br/>
   <%= f.label :containers %><%= f.text_field :ccontainers %><br/>
+  <%= f.label :boat %><%= select("job", "boat_id", Boat.all.map { |r| [ r.name, r.id ] }, { :include_blank => true }) %><br/>
   <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.submit %>
 <% end %>

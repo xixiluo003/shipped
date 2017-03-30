@@ -1,9 +1,5 @@
 <h1>Register a boat<h1>
 
-<%= form_for @boat do |f| %>
-  <%= f.label :name %><%= f.text_field :name %><br/>
-  <%= f.label :capacity %><%= f.text_field :capacity %><br/>
-  <%= f.label :location %><%= f.text_field :location %><br/>
-  <%= f.hidden_field :user_id, value: current_user.id %>
-  <%= f.submit %>
-<% end %>
+<%= render 'form', boat: @boat %>
+
+<%= link_to 'Back', jobs_path %>

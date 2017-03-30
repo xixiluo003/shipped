@@ -16,6 +16,6 @@ class PortsController < ApplicationController
 
   private
     def port_params
-        params.require(:port).permit(:name, :latitude, :longitude, :boat_id)
+        params.require(:port).permit(:name, :latitude, :longitude)
     end
 end

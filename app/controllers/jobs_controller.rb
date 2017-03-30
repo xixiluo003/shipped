@@ -6,6 +6,7 @@ class JobsController < ApplicationController
     puts "\n ******* jobs_index *******"
     @jobs = Job.all
     @job = Job.new
+    
   end
 
   # ======= GET /jobs =======
@@ -24,6 +25,8 @@ class JobsController < ApplicationController
   # ======= GET /jobs/create =======
   def create
     @job = Job.new(job_params)
+
+    puts "\n job_params: #{job_params.inspect}"
 
     respond_to do |format|
       if @job.save
@@ -45,6 +48,14 @@ class JobsController < ApplicationController
     end
   end
 
+  def add_boat
+    @job = Job.find params[:job_id]
+    @boat = Boat.find params[:job][:boats]
+    @job.boats.append @boat
+
+    render :back
+  end
+
   # ======= DELETE /jobs/:id =======
   def destroy
     @job.destroy
@@ -61,6 +72,6 @@ class JobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.require(:job).permit(:description, :cost, :origin, :destination, :user_id, :ccontainers)
+      params.require(:job).permit(:description, :cost, :origin, :destination, :user_id, :ccontainers, :boat_id)
     end
 end
