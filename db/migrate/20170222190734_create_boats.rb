@@ -5,7 +5,7 @@ class CreateBoats < ActiveRecord::Migration[5.0]
       t.string :name
       t.integer :capacity
       t.string :location
-
+      t.string :content_type
 
       t.timestamps
     end

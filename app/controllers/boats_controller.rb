@@ -1,5 +1,13 @@
 class BoatsController < ApplicationController
 
+  def index
+    @boats = Boat.order('created_at')
+  end
+
+  def show
+      puts"\n******* show *******"
+  end
+
   def new
     @boat = Boat.new
     puts "\n current_user_ID: #{current_user.id}"
@@ -15,8 +23,7 @@ class BoatsController < ApplicationController
       render "boats/new", notice: "Not Saved"
     end
   end
-
-
+  
   private
 
     def boat_params

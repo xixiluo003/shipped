@@ -10,6 +10,15 @@
 
   <p class="notice"><%= notice %></p>
 
+  <div class="container">
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>">
+        <%= value %>
+      </div>
+    <% end %>
+  </div>
+
+
   <!-- ======= ======= ======= body ======= ======= ======= -->
   <body>
 
@@ -18,6 +27,7 @@
           <p>header</p>
           <%= render :partial => "/jobs/menu"%>
       </div>
+
 
       <!-- == yield == -->
       <div id="yield" class="section">

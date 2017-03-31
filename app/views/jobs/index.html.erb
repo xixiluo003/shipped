@@ -23,6 +23,7 @@
       Destination Location: <%= destination_name[:name] %><br>
       Containers Needed: <%= job.ccontainers %><br>
       Boat: <%= Boat.find(job.boat_id).name %><br>
+      <%= image_tag(Boat.find(job.boat_id).image.url) %>
     </p>
 
     <td><%= link_to 'Edit', edit_job_path(job) %></td>

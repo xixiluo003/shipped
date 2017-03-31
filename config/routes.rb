@@ -5,10 +5,8 @@ Rails.application.routes.draw do
   root to: "jobs#index"
   get "/" => "jobs#index"
 
-  resources :boats
+  resources :boats, only: [:index, :new, :create, :show, :destroy]
   resources :ports
-  resources :jobs do
-    resources :job_boats
-  end
+  resources :jobs 
 
 end

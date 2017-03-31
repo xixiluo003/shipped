@@ -20,3 +20,17 @@ Job Boats:
   <% end %>
 
   JobBoat.create(job_id: @job.id, boat_id: @job.boat_id)
+
+  <!-- == section == -->
+  <div class="section">
+      <nav class="navbar navbar-inverse">
+        <div class="container">
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><%= link_to 'Photos', photos_path %></li>
+              <li><%= link_to 'Upload Your Photo', new_photo_path %></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+  </div>
